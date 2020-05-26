@@ -1,22 +1,10 @@
 import React, {useState} from 'react';
+import Todos from './data/todos'
 import './styles.css';
 
 
 const App = () => {
-
-	const todosInitState = [
-		{
-			title: 'item 1'
-		},
-		{
-			title: 'item 2'
-		},
-		{
-			title: 'item 3'
-		}
-	];
-
-	const [todos, setTodos] = useState(todosInitState);
+	const [todos, setTodos] = useState(Todos);
 	const [value, setValue] = useState('');
 
 	const handleSubmit = e => {
@@ -27,16 +15,21 @@ const App = () => {
 	};
 
 	const handleAddTodo = (text) => {
-		const newTodos = [...todos, {title: text}];
+		const newTodos = [...todos, {title: text, isCompleted: false}];
 		setTodos(newTodos);
 
 	};
+
+	const handleCompleted = (title) => {
+		setTodos(
+			todos.map(todo => todo.title === title ? { title: todo.title, isCompleted: !todo.isCompleted } : todo ))
+	}
 
 	const handleDelete = (title) => {
 		const newTodos = todos.filter(todo => todo.title != title);
 		setTodos(newTodos);
 	};
-
+	console.log(todos);
 	return (
 		<div className='wrapper'>
 			<h1>Todoooooooo app</h1>
@@ -45,12 +38,14 @@ const App = () => {
 
 			<ul>
 				{
-					todos.length > 1 ?
+					todos.length > 0 ?
 						todos.map(todo => {
+
 							return (
 								<li key={todo.title}>
-									{todo.title}
-									<button onClick={() => {
+									<input type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/>
+									<label htmlFor={todo.title} className='todo-title'>{todo.title}</label>
+									<button className='button' onClick={() => {
 										handleDelete(todo.title);
 									}}>Delete
 									</button>
@@ -60,7 +55,7 @@ const App = () => {
 				}
 			</ul>
 
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className='form'>
 				<input
 					type='text'
 					className='input'
@@ -68,10 +63,9 @@ const App = () => {
 					placeholder='Add Todo...'
 					onChange={e => setValue(e.target.value)}
 				/>
-				<button type='submit'>Add</button>
+				<button type='submit' className='button'>Add</button>
 			</form>
 		</div>
 	);
 };
 export default App;
-
