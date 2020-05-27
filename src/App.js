@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Todos from './data/todos'
 import './styles.css';
 
-
 const App = () => {
 	const [todos, setTodos] = useState(Todos);
 	const [value, setValue] = useState('');
@@ -38,9 +37,7 @@ const App = () => {
 
 			<ul>
 				{
-					todos.length > 0 ?
 						todos.map(todo => {
-
 							return (
 								<li key={todo.title}>
 									<input type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/>
@@ -51,7 +48,7 @@ const App = () => {
 									</button>
 								</li>
 							);
-						}) : null
+						})
 				}
 			</ul>
 
