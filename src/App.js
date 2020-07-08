@@ -31,9 +31,9 @@ const App = () => {
 	console.log(todos);
 	return (
 		<div className='wrapper'>
-			<h1>Todoooooooo app</h1>
+			<h1>To-do app</h1>
 
-			<h3>Was ich machen werde wenn die kontaktsperre aufgehoben wird:</h3>
+			<h3>Styling</h3>
 
 			<ul>
 				{

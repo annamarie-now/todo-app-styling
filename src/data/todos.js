@@ -1,14 +1,14 @@
 const Todos = [
 	{
-		title: 'item 1',
-		isCompleted: true
-	},
-	{
-		title: 'item 2',
+		title: 'Tailwind.css',
 		isCompleted: false
 	},
 	{
-		title: 'item 3',
+		title: 'Bulma.io',
+		isCompleted: false
+	},
+	{
+		title: 'material.ui',
 		isCompleted: false
 	}
 ];
