@@ -1,11 +1,12 @@
 {
-  "name": "react-todooooooo",
+  "name": "react-todo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "build:tailwind": "tailwind build src/tailwind.css -o dist/tailwind.css"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "tailwindcss": "^1.4.6"
   }
 }
