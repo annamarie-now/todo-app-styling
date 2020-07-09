@@ -31,18 +31,18 @@ const App = () => {
 	};
 	console.log(todos);
 	return (
-		<div className='wrapper' class="container mx-auto px-auto">
-			<h1>To-do app</h1>
+		<div className='wrapper' class="m-auto px-auto text-center">
+			<h1 class="p-2 font-hairline text-5xl">To-do app</h1>
 
-			<h3>Styling</h3>
+			<h3 class="italic font-hairline">Styling</h3>
 
-			<ul>
+			<ul class="w-1/2 mx-auto">
 				{
 						todos.map(todo => {
 							return (
-								<li key={todo.title} class="todoListItems">
-									<input type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/>
-									<label htmlFor={todo.title} className='todo-title' class="todoTitle">{todo.title}</label>
+								<li key={todo.title} class="border-b border-gray-600 flex justify-between p-2">
+									<input class="mr-2 my-auto p-1 ease-in-out border border-gray-600 rounded-sm box-border" type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/>
+									<label htmlFor={todo.title} className='todo-title' class="p-1 font-hairline text-lg">{todo.title}</label>
 									<button className='btn' class="btn" onClick={() => {
 										handleDelete(todo.title);
 									}}>Delete
@@ -54,15 +54,15 @@ const App = () => {
 				}
 			</ul>
 
-			<form onSubmit={handleSubmit} className='form' class="form">
+			<form onSubmit={handleSubmit} className='form' class="mx-auto my-1 pt-1">
 				<input
+					class="mr-2 my-auto p-1 ease-in-out border border-gray-600 rounded-sm box-border"
 					type='text'
-					className='input'
 					value={value}
 					placeholder='Add Todo...'
 					onChange={e => setValue(e.target.value)}
 				/>
-				<button type='submit' className='button' class="bg-blue-300 hover:bg-blue-200 text-white font-bold py-2 px-4 rounded">Add</button>
+				<button type='submit' className='button' class="bg-blue-300 hover:bg-blue-200 text-white py-2 px-4 rounded">Add</button>
 			</form>
 		</div>
 	);
