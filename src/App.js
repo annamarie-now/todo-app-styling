@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Todos from './data/todos'
-import './styles.css';
+//import './styles.css';
+import './tailwind.css';
 
 const App = () => {
 	const [todos, setTodos] = useState(Todos);
@@ -30,7 +31,7 @@ const App = () => {
 	};
 	console.log(todos);
 	return (
-		<div className='wrapper'>
+		<div className='wrapper' class="container mx-auto px-auto">
 			<h1>To-do app</h1>
 
 			<h3>Styling</h3>
@@ -39,20 +40,21 @@ const App = () => {
 				{
 						todos.map(todo => {
 							return (
-								<li key={todo.title}>
+								<li key={todo.title} class="todoListItems">
 									<input type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/>
-									<label htmlFor={todo.title} className='todo-title'>{todo.title}</label>
-									<button className='button' onClick={() => {
+									<label htmlFor={todo.title} className='todo-title' class="todoTitle">{todo.title}</label>
+									<button className='btn' class="btn" onClick={() => {
 										handleDelete(todo.title);
 									}}>Delete
 									</button>
 								</li>
+
 							);
 						})
 				}
 			</ul>
 
-			<form onSubmit={handleSubmit} className='form'>
+			<form onSubmit={handleSubmit} className='form' class="form">
 				<input
 					type='text'
 					className='input'
@@ -60,7 +62,7 @@ const App = () => {
 					placeholder='Add Todo...'
 					onChange={e => setValue(e.target.value)}
 				/>
-				<button type='submit' className='button'>Add</button>
+				<button type='submit' className='button' class="bg-blue-300 hover:bg-blue-200 text-white font-bold py-2 px-4 rounded">Add</button>
 			</form>
 		</div>
 	);

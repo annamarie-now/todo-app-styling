@@ -3,3 +3,75 @@
 @tailwind components;
 
 @tailwind utilities;
+
+body {
+    @apply bg-blue-100;
+}
+
+h1 {
+    @apply p-2;
+    @apply font-hairline;
+    @apply text-5xl;
+}
+
+h3{
+    font-style: italic;
+    font-weight: 100;
+}
+
+ul {
+    @apply w-1/2;
+    @apply mx-auto;
+
+}
+
+li {
+    @apply border-b border-gray-600;
+    @apply flex;
+    @apply justify-between;
+    @apply p-2;
+}
+
+
+input {
+    @apply border-solid border border-gray-600 rounded-sm;
+    @apply box-border;
+    @apply mr-2;
+    @apply my-auto;
+    @apply p-1;
+    @apply ease-in-out;
+}
+
+.container {
+    @apply mt-5;
+    @apply mr-auto;
+    @apply mb-0;
+    @apply ml-auto;
+    @apply text-center;
+}
+
+.form {
+    @apply mx-auto;
+    @apply my-1;
+    padding-top: 1rem;
+}
+
+.btn {
+    @apply bg-blue-500;
+    @apply text-white;
+    @apply py-2 px-4 rounded;
+}
+
+.btn:hover {
+    @apply bg-blue-400;
+}
+
+.todoTitle {
+    @apply p-1;
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+.todoListItems {
+    @apply flex-row
+}
