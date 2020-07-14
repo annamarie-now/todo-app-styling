@@ -43,7 +43,8 @@ const App = () => {
 							return (
 								<tr key={todo.title} className="columns mx-1">
 									<td className="column checkbox"><input class="checkbox" type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/></td>
-									<td className="column"><label htmlFor={todo.title} className="label">{todo.title}</label></td>
+									<td className="column">
+										<label htmlFor={todo.title} className="label">{todo.title}</label></td>
 										<td className="column"><button className="button is-primary has-text-weight-bold" onClick={() => {
 										handleDelete(todo.title);
 									}}>Delete
