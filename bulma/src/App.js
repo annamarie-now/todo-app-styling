@@ -31,40 +31,39 @@ const App = () => {
 	};
 	console.log(todos);
 	return (
-		<div className="hero-body has-text-centered">
+		<div className="has-text-centered">
 			<h1 className="title is-1">To-do app</h1>
 
-			<h3 class="subtitle">Bulma styling</h3>
+			<h3 className="subtitle">Bulma styling</h3>
+			<div className="block">
+				<div className="table">
 
-			<ul className="section card">
 				{
 						todos.map(todo => {
 							return (
-								<li key={todo.title} className="card-content columns">
-									<div class="level-left level-item column"><input class="checkbox" type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/></div>
-									<div className="column"><label htmlFor={todo.title} className="label">{todo.title}</label></div>
-										<div className="column"><button className="button is-danger has-text-weight-bold" onClick={() => {
+								<tr key={todo.title} className="columns">
+									<td className="column checkbox"><input class="checkbox" type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/></td>
+									<td className="column"><label htmlFor={todo.title} className="label">{todo.title}</label></td>
+										<td className="column"><button className="button is-primary has-text-weight-bold" onClick={() => {
 										handleDelete(todo.title);
 									}}>Delete
-									</button></div>
-								</li>
-
+									</button></td>
+								</tr>
 							);
 						})
 				}
-			</ul>
-
-			<form onSubmit={handleSubmit} className='form' class="mx-auto my-1 pt-1">
+						</div></div>
+			<form onSubmit={handleSubmit} className="form field has-addons">
 				<input
-					class="input is-rounded"
+					className="input"
 					type='text'
 					value={value}
 					placeholder='Add Todo...'
 					onChange={e => setValue(e.target.value)}
 				/>
-				<button type='submit' className='button' class="button">Add</button>
+				<button type="submit" className="button is-info" >Add</button>
 			</form>
-		</div>
+</div>
 	);
 };
 export default App;
