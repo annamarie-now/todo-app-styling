@@ -31,17 +31,17 @@ const App = () => {
 	};
 	console.log(todos);
 	return (
-		<div className="has-text-centered">
+		<div className="has-text-centered mx-4 my-3">
 			<h1 className="title is-1">To-do app</h1>
 
 			<h3 className="subtitle">Bulma styling</h3>
-			<div className="block">
-				<div className="table">
+			<div className="card table">
+				<div className="tbody">
 
 				{
 						todos.map(todo => {
 							return (
-								<tr key={todo.title} className="columns">
+								<tr key={todo.title} className="columns mx-1">
 									<td className="column checkbox"><input class="checkbox" type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/></td>
 									<td className="column"><label htmlFor={todo.title} className="label">{todo.title}</label></td>
 										<td className="column"><button className="button is-primary has-text-weight-bold" onClick={() => {
@@ -53,7 +53,7 @@ const App = () => {
 						})
 				}
 						</div></div>
-			<form onSubmit={handleSubmit} className="form field has-addons">
+			<form onSubmit={handleSubmit} className="mt-5 form field has-addons">
 				<input
 					className="input"
 					type='text'
