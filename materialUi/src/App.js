@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Todos from './data/todos'
-//import './styles.css';
-import './materialUI.scss';
+import { Button, Typography, Container } from 'material-ui/core';
 
 const App = () => {
     const [todos, setTodos] = useState(Todos);
@@ -31,13 +30,12 @@ const App = () => {
     };
 
     return (
-        <div className='container'>
-            <div>
-                <h1 className='title has-text-centered'>
+        <Container maxWidth='sm'>
+                <Typography variant='h1' gutterBottom>
                     Todo List
-                </h1>
-                <h2 className="subtitle has-text-centered">Bulma styling</h2>
-            </div>
+                </Typography>
+            <Typography variant='h3' gutterBottom>MaterialUi styling</Typography>
+            </Container>
 
             {
                 todos.map(todo => {
@@ -81,47 +79,7 @@ const App = () => {
                     <button type="submit" className="button is-info">Add</button>
                 </form>
             </div>
-        </div>
+        </Container>
     );
 };
-
-/*
-                    <div key={todo.title} className="list">
-                        <ul>
-                            <div className="list-item tags">
-                                <input class="checkbox" type="checkbox" id={todo.title}
-                                       checked={todo.isCompleted} onChange={() => {
-                                    handleCompleted(todo.title)
-                                }}/>
-                                <li htmlFor={todo.title} className="label">{todo.title}</li>
-                                <button className="button is-primary has-text-weight-bold" onClick={() => {
-                                    handleDelete(todo.title);
-                                }}>Delete
-                                </button>
-                            </div>
-                        </ul>
-                    </div>
-                )
-                    ;
-                })
-            }
-        </div>
-</div>
-<section className="section">
-<form onSubmit={handleSubmit} className="is-grouped field has-addons has-addons-centered">
-<div className="control my-auto">
-<input
-className="input"
-type='text'
-value={value}
-placeholder='Add Todo...'
-onChange={e => setValue(e.target.value)}
-/>
-</div>
-</form>
-
-<button type="submit" className="button is-info">Add</button></section>
-</div>
-);
-};*/
 export default App;

@@ -85,43 +85,4 @@ const App = () => {
     );
 };
 
-/*
-                    <div key={todo.title} className="list">
-                        <ul>
-                            <div className="list-item tags">
-                                <input class="checkbox" type="checkbox" id={todo.title}
-                                       checked={todo.isCompleted} onChange={() => {
-                                    handleCompleted(todo.title)
-                                }}/>
-                                <li htmlFor={todo.title} className="label">{todo.title}</li>
-                                <button className="button is-primary has-text-weight-bold" onClick={() => {
-                                    handleDelete(todo.title);
-                                }}>Delete
-                                </button>
-                            </div>
-                        </ul>
-                    </div>
-                )
-                    ;
-                })
-            }
-        </div>
-</div>
-<section className="section">
-<form onSubmit={handleSubmit} className="is-grouped field has-addons has-addons-centered">
-<div className="control my-auto">
-<input
-className="input"
-type='text'
-value={value}
-placeholder='Add Todo...'
-onChange={e => setValue(e.target.value)}
-/>
-</div>
-</form>
-
-<button type="submit" className="button is-info">Add</button></section>
-</div>
-);
-};*/
 export default App;
