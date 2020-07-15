@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Todos from './data/todos'
-import {Button, Typography, Container, Checkbox} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import {Button, Typography, Container, Checkbox, FormControl} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Table from '@material-ui/core/Table';
 import TextField from '@material-ui/core/TextField';
@@ -53,32 +53,39 @@ const App = () => {
     };
 
     return (
-        <Container maxWidth='sm'>
-            <Typography variant='h1'>
+        <Container
+            className="container"
+            maxWidth='sm'>
+            <Typography
+                className="h1"
+                variant='h1'>
                 Todo List
             </Typography>
-            <Typography variant='h3'>MaterialUi styling</Typography>
-
+            <Typography
+                className="h3"
+                variant='h4'>MaterialUi styling</Typography>
             {
                 todos.map(todo => {
                     return (
-                        <div>
-                            <TableContainer component={Paper}>
-                                <Table className={classes.table} aria-label="customized table">
-
-                                    <TableRow>
-                                        <TableCell>
-                                            <Checkbox id={todo.title}
-                                                      checked={todo.isCompleted} onChange={() => {
-                                                handleCompleted(todo.title)
-                                            }}/> </TableCell>
-                                        <TableCell>{todo.title}</TableCell>
-                                        <TableCell>
+                        <Table component={Paper}>
+                            <TableBody className={classes.table} aria-label="customized table">
+                                <TableRow>
+                                    <TableCell
+                                        width="30%">
+                                        <Checkbox id={todo.title}
+                                                  checked={todo.isCompleted} onChange={() => {
+                                            handleCompleted(todo.title)
+                                        }}/> </TableCell>
+                                    <TableCell
+                                        width="30%"
+                                        key={todo.title}>{todo.title}</TableCell>
+                                    <TableCell
+                                        width="30%">
                                         <Button
                                             variant="contained"
                                             color="secondary"
                                             className={classes.button}
-                                            startIcon={<DeleteIcon />}
+                                            startIcon={<DeleteIcon/>}
                                             onClick={() => {
                                                 handleDelete(todo.title);
                                             }}
@@ -86,33 +93,32 @@ const App = () => {
                                             Delete
                                         </Button></TableCell>
                                 </TableRow>
-
-                                </Table>
-                            </TableContainer>
-                </div>
-                );
+                            </TableBody>
+                        </Table>
+                    );
                 })
             }
-            <div>
-                <TextField
-                    className="addTodoInput"
-                    id="outlined-read-only-input"
-                    label="Add todo"
-                    variant="outlined"
-                    onChange={e => setValue(e.target.value)}
-                />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className="addButton"
-                    type="submit"
-                >
-                    Add
-                </Button>
-
-
-
-            </div>
+            <form className="addTodoContainer" onSubmit={handleSubmit}>
+                <div>
+                    <TextField
+                        onSubmit={handleSubmit}
+                        className="addTodoInput"
+                        label="Add todo"
+                        id="outlined-size-small"
+                        defaultValue=""
+                        variant="outlined"
+                        size="small"
+                        onChange={e => setValue(e.target.value)}
+                    />
+                    <Button
+                        variant="contained"
+                        className="addButton"
+                        size="large"
+                        type="submit"
+                    >
+                        Add
+                    </Button></div>
+            </form>
 
         </Container>
     );

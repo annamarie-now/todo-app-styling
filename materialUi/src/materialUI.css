@@ -1,12 +1,29 @@
+
+.h1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.h3 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.addTodoContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
 .addTodoInput {
     margin-top: 1rem !important;
     border-radius: 5px;
-    height: 2rem !important;
 }
 
 .addButton {
     margin-top: 1rem !important;
-    background-color: #1d72aa;
     border-radius: 5px;
     align-items: center;
+    height: 2.5rem !important;
+    background-color: #fa7087 !important;
+    color: white !important;
 }
