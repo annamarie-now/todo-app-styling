@@ -1,7 +1,7 @@
 const Todos = [
 	{
 		title: 'tailwindcss',
-		isCompleted: false
+		isCompleted: true
 	},
 	{
 		title: 'bulma.io',

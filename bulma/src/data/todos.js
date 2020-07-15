@@ -5,7 +5,7 @@ const Todos = [
 	},
 	{
 		title: 'bulma.io',
-		isCompleted: false
+		isCompleted: true
 	},
 	{
 		title: 'material-ui',
