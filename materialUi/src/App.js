@@ -3,6 +3,7 @@ import Todos from './data/todos'
 import {Button, Typography, Container, Checkbox, FormControl} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
 import Table from '@material-ui/core/Table';
 import TextField from '@material-ui/core/TextField';
 import TableBody from '@material-ui/core/TableBody';
@@ -115,8 +116,7 @@ const App = () => {
                         className="addButton"
                         size="large"
                         type="submit"
-                    >
-                        Add
+                    ><AddIcon/>
                     </Button></div>
             </form>
 
