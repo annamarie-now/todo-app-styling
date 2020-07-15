@@ -49,7 +49,7 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'css/bulma.css'
+			filename: 'css/materialUi.css'
 		}),
 	new webpack.HotModuleReplacementPlugin()],
 	devServer: {

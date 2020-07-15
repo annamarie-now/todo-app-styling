@@ -5,11 +5,11 @@ const Todos = [
 	},
 	{
 		title: 'bulma.io',
-		isCompleted: true
+		isCompleted: false
 	},
 	{
 		title: 'material-ui',
-		isCompleted: false
+		isCompleted: true
 	}
 ];
 

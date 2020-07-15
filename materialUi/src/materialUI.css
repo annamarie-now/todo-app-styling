@@ -1,0 +1,12 @@
+.addTodoInput {
+    margin-top: 1rem !important;
+    border-radius: 5px;
+    height: 2rem !important;
+}
+
+.addButton {
+    margin-top: 1rem !important;
+    background-color: #1d72aa;
+    border-radius: 5px;
+    align-items: center;
+}

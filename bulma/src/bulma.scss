@@ -35,7 +35,7 @@ div.columns {
 .list-item {
   color: black !important;
   background-color: white !important;
-padding: 1rem;
+  padding: 1rem;
 }
 
 .tags {
@@ -44,6 +44,7 @@ padding: 1rem;
 
 .tag {
   float: left;
+
   :hover {
     background-color: #f5f5f5;
   }
