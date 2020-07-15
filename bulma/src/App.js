@@ -35,13 +35,13 @@ const App = () => {
 			<h1 className="title is-1">To-do app</h1>
 
 			<h3 className="subtitle">Bulma styling</h3>
-			<div className="card table">
-				<div className="tbody">
+			<section className="section">
+				<container className="container">
 
 				{
 						todos.map(todo => {
 							return (
-								<tr key={todo.title} className="columns mx-1">
+								<tr key={todo.title} className="columns">
 									<td className="column checkbox"><input class="checkbox" type="checkbox" id={todo.title} checked={todo.isCompleted} onChange={() => {handleCompleted(todo.title)}}/></td>
 									<td className="column">
 										<label htmlFor={todo.title} className="label">{todo.title}</label></td>
@@ -53,17 +53,19 @@ const App = () => {
 							);
 						})
 				}
-						</div></div>
-			<form onSubmit={handleSubmit} className="mt-5 form field has-addons">
+						</container></section>
+			<section className="section">
+			<form onSubmit={handleSubmit} className="is-grouped field has-addons has-addons-centered">
+				<div className="control my-auto">
 				<input
 					className="input"
 					type='text'
 					value={value}
 					placeholder='Add Todo...'
 					onChange={e => setValue(e.target.value)}
-				/>
+				/></div>
 				<button type="submit" className="button is-info" >Add</button>
-			</form>
+			</form></section>
 </div>
 	);
 };
