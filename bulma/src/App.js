@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Todos from './data/todos'
-//import './styles.css';
 import './bulma.scss';
 
 const App = () => {
@@ -55,9 +54,11 @@ const App = () => {
                             </span>
                                             <li>
                                                 {todo.title}
-                                                <a className="tag is-delete is-danger" onClick={() => {
-                                                    handleDelete(todo.title);
-                                                }}></a>
+                                                <a
+                                                    className="tag is-delete is-danger"
+                                                    onClick={() => {
+                                                        handleDelete(todo.title);
+                                                    }}/>
                                             </li>
                                         </div>
                                     </ul>

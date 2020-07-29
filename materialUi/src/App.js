@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Todos from './data/todos'
-import {Button, Typography, Container, Checkbox, FormControl} from '@material-ui/core';
+import {Button, Typography, Container, Checkbox } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add';
@@ -8,10 +8,9 @@ import Table from '@material-ui/core/Table';
 import TextField from '@material-ui/core/TextField';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from "@material-ui/core/Paper";
-import "./materialUI.css";
+import "./materialUi.css";
 
 const useStyles = makeStyles((theme) => ({
     button: {

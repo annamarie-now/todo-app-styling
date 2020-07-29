@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack",
     "test": "echo \"No test specified\" && exit 0",
-    "build:materialUI": ""
+    "build:materialUi": "materialUi build src/materialUi.css -o dist/materialUi.css"
   },
   "keywords": [],
   "author": "",

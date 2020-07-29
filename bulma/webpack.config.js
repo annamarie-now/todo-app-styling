@@ -13,7 +13,7 @@ module.exports = {
 		rules: [{
 			test: /\.scss$/,
 			use: [
-				MiniCssExtractPlugin.loader,
+                'style-loader',
 				{
 					loader: 'css-loader'
 				},
@@ -34,7 +34,6 @@ module.exports = {
 				test: /\.css$/i,
 				exclude: /node_modules/,
 				use: [
-					'style-loader',
 					{
 						loader: 'css-loader',
 						options: {
@@ -48,9 +47,6 @@ module.exports = {
 		extensions: ['*', '.js', '.jsx'],
 	},
 	plugins: [
-		new MiniCssExtractPlugin({
-			filename: 'css/bulma.css'
-		}),
 	new webpack.HotModuleReplacementPlugin()],
 	devServer: {
 		contentBase: './dist',

@@ -20,6 +20,15 @@ module.exports = {
 							modules: false,
 						},
 					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							ident: 'postcss',
+							plugins: [
+								require('tailwindcss'),
+							],
+						},
+					},
 				],
 			},
 		],
